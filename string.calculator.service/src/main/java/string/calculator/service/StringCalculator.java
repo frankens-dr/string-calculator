@@ -17,7 +17,7 @@ public class StringCalculator {
 				}
 				subNum += x;
 			} else {
-				if (!subNum.equals(""))
+				if(subNum != "" && Integer.parseInt(subNum) <= 1000 )
 					sum += Integer.parseInt(String.valueOf(subNum));
 				subNum = "";
 			}

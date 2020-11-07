@@ -51,4 +51,12 @@ public class StringCalculatorTest {
 			assertEquals("negatives not allowed", e.getMessage());
 		}
 	}
+	
+	@Test
+	public void testForNumbersGreaterThanThousand() {
+		StringCalculator stringCalculator = new StringCalculator();
+		assertEquals(7, stringCalculator.Add("//;\n1;2\n4"));
+		assertEquals(1003, stringCalculator.Add("//;\\n;5000\\n3;//1000"));
+		assertEquals(22, stringCalculator.Add("1\n11\n10"));
+	}
 }
