@@ -1,0 +1,4 @@
+/target/
+*.jar
+.settings
+string.calculator.service/target
