@@ -22,10 +22,18 @@ public class StringCalculatorTest {
 	}
 	
 	@Test
-	public void testForMoreThanOneNumbers() {
+	public void testForMoreThanOneNumber() {
 		StringCalculator stringCalculator = new StringCalculator();
 		assertEquals(3, stringCalculator.Add("1,2"));
 		assertEquals(7, stringCalculator.Add("1,2,4"));
 		assertEquals(22, stringCalculator.Add("1,11,10"));
+	}
+	
+	@Test
+	public void testForMoreThanOneNumberAndMultipleDelimiters() {
+		StringCalculator stringCalculator = new StringCalculator();
+		assertEquals(7, stringCalculator.Add("//;\n1;2\n4"));
+		assertEquals(17, stringCalculator.Add("//;\\n;5\\n3;//9"));
+		assertEquals(22, stringCalculator.Add("1\n11\n10"));
 	}
 }

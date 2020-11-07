@@ -4,17 +4,18 @@ public class StringCalculator {
 
 	public int Add(String Number) {
 		int sum = 0;
-		char x = ' ';
+		char x = ' ', x1 = ' ';
 		String subNum = "";
 		if (Number.equals(" ")) {
 			return 0;
 		}
 		for (int i = 0; i < Number.length(); i++) {
 			x = Number.charAt(i);
-			if (x != ',') {
+			if (x != ',' && x != '\n' && x != '/' && x != ';' && x != '\\' && x != 'n' && x1 != 'n') {
 				subNum += x;
 			} else {
-				sum += Integer.parseInt(String.valueOf(subNum));
+				if (!subNum.equals(""))
+					sum += Integer.parseInt(String.valueOf(subNum));
 				subNum = "";
 			}
 		}
