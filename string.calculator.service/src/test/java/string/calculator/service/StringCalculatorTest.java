@@ -36,4 +36,19 @@ public class StringCalculatorTest {
 		assertEquals(17, stringCalculator.Add("//;\\n;5\\n3;//9"));
 		assertEquals(22, stringCalculator.Add("1\n11\n10"));
 	}
+	
+	@Test
+	public void testForNegativeNumbers() {
+		StringCalculator stringCalculator = new StringCalculator();
+		try {
+			stringCalculator.Add("1,-2");
+		} catch (Exception e) {
+			assertEquals("negatives not allowed", e.getMessage());
+		}
+		try {
+			stringCalculator.Add("//;\\\\n;5\\\\n-3;//9");
+		} catch (Exception e) {
+			assertEquals("negatives not allowed", e.getMessage());
+		}
+	}
 }

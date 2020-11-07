@@ -12,6 +12,9 @@ public class StringCalculator {
 		for (int i = 0; i < Number.length(); i++) {
 			x = Number.charAt(i);
 			if (x != ',' && x != '\n' && x != '/' && x != ';' && x != '\\' && x != 'n' && x1 != 'n') {
+				if (x == '-') {
+					throw new RuntimeException("negatives not allowed");
+				}
 				subNum += x;
 			} else {
 				if (!subNum.equals(""))
